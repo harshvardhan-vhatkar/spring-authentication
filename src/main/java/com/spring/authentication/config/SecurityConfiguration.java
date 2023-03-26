@@ -59,7 +59,9 @@ public class SecurityConfiguration {
 	                "/js/**",
 	                "/css/**",
 	                "/img/**").permitAll()
-		.anyRequest().authenticated()
+        .requestMatchers("/admin/**").hasAuthority("ADMIN")
+        .requestMatchers("/librarian/**").hasAuthority("LIBRARIAN")
+        .anyRequest().authenticated()
 		.and()
 		.formLogin()
 		.loginPage("/login")
@@ -70,7 +72,9 @@ public class SecurityConfiguration {
 		.clearAuthentication(true)
 		.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 		.logoutSuccessUrl("/login?logout")
-		.permitAll();
+		.permitAll()
+		
+		;
        
         return http.build();
     }

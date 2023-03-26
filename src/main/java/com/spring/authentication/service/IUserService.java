@@ -2,6 +2,7 @@ package com.spring.authentication.service;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;

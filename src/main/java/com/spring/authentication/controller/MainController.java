@@ -14,4 +14,14 @@ public class MainController {
 	public String home() {
 		return "index";
 	}
+	
+	@GetMapping("/admin")
+	public String admin() {
+		return "admin";
+	}
+	
+	@GetMapping("/librarian")
+	public String librarian() {
+		return "librarian";
+	}
 }
